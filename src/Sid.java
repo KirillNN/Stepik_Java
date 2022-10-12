@@ -4,7 +4,7 @@ public class Sid {
     }
 
     public static String howMuchILoveYou(int nb_petals) {
-        String[] data = {"I love you", "a little", "a lot", "passionately", "madly", "not at all"};
-        return data[(nb_petals + 1) % 6 - 1];
+        String[] data = {"not at all", "I love you", "a little", "a lot", "passionately", "madly"};
+        return data[nb_petals % 6];
     }
 }
