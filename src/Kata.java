@@ -1,13 +1,62 @@
+import java.sql.Array;
 import java.util.Arrays;
+import java.util.Objects;
+import java.util.OptionalInt;
 import java.util.StringJoiner;
+import java.util.stream.IntStream;
 
 public class Kata {
     public static void main(String[] args) {
-        System.out.println(expressionsMatter(2, 1, 2));
+//        System.out.println(expressionsMatter(2, 1, 2));
 //        System.out.println(feast("great blue heron", "garlic nann"));
 //        System.out.println(Arrays.toString(powersOfTwo(2)));
 //        System.out.println(multiTable(5));
 //        System.out.println(toBinary(11));
+//        System.out.println(quarterOf(6));
+//        System.out.println(noSpace("8 j 8   mBliB8g  imjB8B8  jl  B"));
+//        System.out.println(Arrays.toString(countPositivesSumNegatives(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15})));
+//        System.out.println(find_average(new int[]{1, 2, 3}));
+//        System.out.println(greet("Ryan"));
+//        System.out.println(solution("world"));
+        System.out.println(seatsInTheater(1000, 1000, 1000, 1000));
+        System.out.println(seatsInTheater(16, 11, 5, 3));
+    }
+
+    public static int seatsInTheater(int nCols, int nRows, int col, int row) {
+        int x = nCols - col + 1;
+        int y = nRows - row;
+        return x * y;
+    }
+
+    public static String solution(String str) {
+        return new StringBuilder(str).reverse().toString();
+    }
+
+    public static String greet(String name) {
+        return "Hello, " + name + " how are you doing today?";
+    }
+
+    public static double find_average(int[] array) {
+//        return array.length == 0 ? 0 : IntStream.of(array).average().getAsDouble();
+        return Arrays.stream(array).average().orElse(0);
+    }
+
+    public static int[] countPositivesSumNegatives(int[] input) {
+        if (input == null || input.length == 0) {
+            return new int[]{};
+        }
+        System.out.println(Arrays.toString(input));
+        long x = IntStream.of(input).filter(num -> num > 0).count();
+        int y = IntStream.of(input).filter(num -> num < 0).sum();
+        return new int[]{(int) x, y};
+    }
+
+    public static String noSpace(final String x) {
+        return x.replaceAll(" ", "");
+    }
+
+    public static int quarterOf(int month) {
+        return (month - 1) / 3 + 1;
     }
 
     public static int expressionsMatter(int a, int b, int c) {
