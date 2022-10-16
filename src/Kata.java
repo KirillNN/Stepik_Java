@@ -18,8 +18,16 @@ public class Kata {
 //        System.out.println(find_average(new int[]{1, 2, 3}));
 //        System.out.println(greet("Ryan"));
 //        System.out.println(solution("world"));
-        System.out.println(seatsInTheater(1000, 1000, 1000, 1000));
-        System.out.println(seatsInTheater(16, 11, 5, 3));
+//        System.out.println(seatsInTheater(1000, 1000, 1000, 1000));
+//        System.out.println(seatsInTheater(16, 11, 5, 3));
+        System.out.println(nthPower(new int[] {3,1,2}, 3));
+    }
+
+    public static int nthPower(int[] array, int n) {
+        if (array.length <= n) {
+            return -1;
+        }
+        return (int) Math.pow(array[n], n);
     }
 
     public static int seatsInTheater(int nCols, int nRows, int col, int row) {
