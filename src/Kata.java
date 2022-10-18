@@ -20,7 +20,21 @@ public class Kata {
 //        System.out.println(solution("world"));
 //        System.out.println(seatsInTheater(1000, 1000, 1000, 1000));
 //        System.out.println(seatsInTheater(16, 11, 5, 3));
-        System.out.println(nthPower(new int[] {3,1,2}, 3));
+//        System.out.println(nthPower(new int[]{3, 1, 2}, 3));
+//        System.out.println(countingSheep(0));
+        System.out.println(getVolumeOfCuboid(1, 2, 2));
+    }
+
+    public static double getVolumeOfCuboid(final double length, final double width, final double height) {
+        return length * width * height;
+    }
+
+    public static String countingSheep(int num) {
+        String res = "";
+        for (int i = 0; i < num; i++) {
+            res += (i + 1) + " sheep...";
+        }
+        return res;
     }
 
     public static int nthPower(int[] array, int n) {
