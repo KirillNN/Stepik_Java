@@ -23,7 +23,12 @@ public class Kata {
 //        System.out.println(nthPower(new int[]{3, 1, 2}, 3));
 //        System.out.println(countingSheep(0));
 //        System.out.println(getVolumeOfCuboid(1, 2, 2));
-        System.out.println(Arrays.toString(squareOrSquareRoot(new int[]{4, 3, 9, 7, 2, 1})));
+//        System.out.println(Arrays.toString(squareOrSquareRoot(new int[]{4, 3, 9, 7, 2, 1})));
+        System.out.println(greet("Greg", "Daniel"));
+    }
+
+    static String greet(String name, String owner) {
+        return name.equals(owner) ? "Hello boss" : "Hello guest";
     }
 
     public static int[] squareOrSquareRoot(int[] array) {
