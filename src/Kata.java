@@ -22,7 +22,22 @@ public class Kata {
 //        System.out.println(seatsInTheater(16, 11, 5, 3));
 //        System.out.println(nthPower(new int[]{3, 1, 2}, 3));
 //        System.out.println(countingSheep(0));
-        System.out.println(getVolumeOfCuboid(1, 2, 2));
+//        System.out.println(getVolumeOfCuboid(1, 2, 2));
+        System.out.println(Arrays.toString(squareOrSquareRoot(new int[]{4, 3, 9, 7, 2, 1})));
+    }
+
+    public static int[] squareOrSquareRoot(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            int x = (int) Math.pow((int) Math.sqrt(array[i]), 2);
+            System.out.println(array[i]);
+            System.out.println(x);
+            if (x == array[i]) {
+                array[i] = (int) Math.sqrt(array[i]);
+            } else {
+                array[i] = (int) Math.pow(array[i], 2);
+            }
+        }
+        return array;
     }
 
     public static double getVolumeOfCuboid(final double length, final double width, final double height) {
