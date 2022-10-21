@@ -4,7 +4,22 @@ public class GrassHopper {
     public static void main(String[] args) {
 //        System.out.println(summation(5));
         System.out.println(getGrade(95, 90, 93, true));
+        System.out.println(weatherInfo(50));
     }
+
+    public static String weatherInfo(int temp) {
+        double c = convertToCelsius(temp);
+        if (c < 0)
+            return (c + " is freezing temperature");
+        else
+            return (c + " is above freezing temperature");
+    }
+
+    public static double convertToCelsius(int temperature) {
+        double celsius = (temperature - 32) * 5 / 9.0;
+        return celsius;
+    }
+
     public static char getGrade(int s1, int s2, int s3, boolean x) {
         return switch ((s1 + s2 + s3) / 30) {
             case 10, 9 -> 'A';
@@ -14,6 +29,7 @@ public class GrassHopper {
             default -> 'F';
         };
     }
+
     public static char getGrade(int s1, int s2, int s3) {
         double x = (s1 + s2 + s3) / 3.0;
         if (x >= 90 && x <= 100) {

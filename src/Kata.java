@@ -24,7 +24,29 @@ public class Kata {
 //        System.out.println(countingSheep(0));
 //        System.out.println(getVolumeOfCuboid(1, 2, 2));
 //        System.out.println(Arrays.toString(squareOrSquareRoot(new int[]{4, 3, 9, 7, 2, 1})));
-        System.out.println(greet("Greg", "Daniel"));
+//        System.out.println(greet("Greg", "Daniel"));
+//        System.out.println(rentalCarCost(7));
+//        System.out.println(bonusTime(10000, true));
+        System.out.println(grow(new int[]{1, 2, 3}));
+    }
+
+    public static int grow(int[] x) {
+        return Arrays.stream(x).reduce((a, b) -> a * b).getAsInt();
+    }
+
+    public static String bonusTime(final int salary, final boolean bonus) {
+        int salary_r = salary;
+        if (bonus) salary_r *= 10;
+        return String.valueOf('\u00A3') + salary_r;
+//        return "\u00A3" + (bonus ? 10 : 1) * salary; короткая запись if в return
+    }
+
+    public static int rentalCarCost(int d) {
+        int cost = 40 * d;
+        if (d >= 7) cost -= 50;
+        else if (d >= 3) cost -= 20;
+        return cost;
+//        return d < 7 ? d < 3 ? 40 * d : 40 * d - 20 : 40 * d - 50; большой if в одну строку
     }
 
     static String greet(String name, String owner) {
